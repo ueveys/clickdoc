@@ -1,13 +1,13 @@
-import { browser, protractor, ProtractorBrowser } from "protractor";
+import { browser } from "protractor";
 import { LampenweltHomepage } from "../pageObjects/LampenweltHomepage";
 
 // The jasmine typings are brought in via DefinitelyTyped ambient typings.
-describe('lampenwelt homepage', function(){
+describe('lampenwelt homepage testautomatisierung', function(){
+
   browser.waitForAngularEnabled(false);
-  let lampenweltHomepage = new LampenweltHomepage();
+  var lampenweltHomepage = new LampenweltHomepage();
+
   beforeEach(function () {
-    
-   
   });
 
   it('Seite aufrufen', function(){
@@ -19,18 +19,15 @@ describe('lampenwelt homepage', function(){
     
     lampenweltHomepage.nav1.click();
     let nav1text = lampenweltHomepage.nav1.getText();
-    console.log(nav1text);
-    //const kati = lampenweltHomepage.kategorieTitel.getText();
-    //console.log(kati);
-    
-    //Screenshot nach dem Test erstellen
-    /**/
+    console.log("das ist gettext " + nav1text);
   }); 
-  
-  it('Kapiteltitel pruefen', function(){
-    const kati = lampenweltHomepage.kategorieTitel.getText();
 
-  });
+  /*it('Kapiteltitel pruefen', function () {
+    const kati = lampenweltHomepage.kategorieTitel.getText();
+    browser.sleep(3000);
+    console.log(kati);
+
+  });*/
 
 
   afterEach(function(){
