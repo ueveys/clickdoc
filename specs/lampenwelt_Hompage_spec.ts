@@ -17,18 +17,20 @@ describe('lampenwelt homepage testautomatisierung', function(){
 
   it('Erste Navigationselement klicken:', function(){
     
+    // Klicken auf Navigationsbereich
     lampenweltHomepage.nav1.click();
-    let nav1text = lampenweltHomepage.nav1.getText();
-    console.log("das ist gettext " + nav1text);
+
+    var nav1text = lampenweltHomepage.nav1.getText().then(function(textNavi){
+      console.log("Navigationstitel ist "+ textNavi);
+    });
+
+    lampenweltHomepage.kateTitel.getText().then(function(kapitelText){
+      console.log("Kategorietitel ist " + kapitelText);
+      expect(lampenweltHomepage.nav1.getText()).toEqual(kapitelText);
+    });
+
+    
   }); 
-
-  /*it('Kapiteltitel pruefen', function () {
-    const kati = lampenweltHomepage.kategorieTitel.getText();
-    browser.sleep(3000);
-    console.log(kati);
-
-  });*/
-
 
   afterEach(function(){
     console.log("Test ist abgeschlossen!");
