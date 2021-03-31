@@ -12,8 +12,8 @@ describe('Clickdoc Homepage', function () {
     //Act
     // Assert
     //Assert
-    let titelVorgabe = "CLICKDOC - Arzttermine online buchen & Gesundheits-Apps";
-    expect(browser.getTitle()).toEqual(titelVorgabe);
+    let titelVorgabe = "CLICKDOC";
+    expect(browser.getTitle()).toContain(titelVorgabe);
     browser.sleep(2000);
     //Act
     clickdocHome.cookies.click();

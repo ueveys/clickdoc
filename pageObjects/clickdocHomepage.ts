@@ -26,10 +26,7 @@ export class ClickdocHomepage {
   }
  
   urlAufruf() {
-    browser.waitForAngularEnabled(false);
-    browser.manage().window().maximize();
     browser.get('https://clickdoc.de/cd-de/');
-    browser.sleep(2000);
   }
 
 }
