@@ -1,4 +1,4 @@
-import { browser, element, by, protractor, WebDriver } from "protractor";
+import { browser } from "protractor";
 import { ClickdocHomepage } from "../pageObjects/clickdocHomepage";
 
 describe('Clickdoc Homepage', function () {
@@ -6,8 +6,15 @@ describe('Clickdoc Homepage', function () {
 
     let clickdocHome = new ClickdocHomepage();
     //Navigation
-    browser.waitForAngularEnabled(true);
+    browser.waitForAngularEnabled(false);
+    browser.manage().window().maximize();
     clickdocHome.urlAufruf();
+    //Act
+    // Assert
+    //Assert
+    let titelVorgabe = "CLICKDOC - Arzttermine online buchen & Gesundheits-Apps";
+    expect(browser.getTitle()).toEqual(titelVorgabe);
+    browser.sleep(2000);
     //Act
     clickdocHome.cookies.click();
     browser.sleep(3000);
@@ -22,12 +29,10 @@ describe('Clickdoc Homepage', function () {
     clickdocHome.inputPassword("Asterweg45!");
     browser.sleep(3000);
     clickdocHome.anmelden();
+    browser.sleep(5000);
 
 
   });
 
 });
-function alert(alert: any) {
-  throw new Error("Function not implemented.");
-}
 
