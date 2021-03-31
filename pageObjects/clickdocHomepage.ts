@@ -24,17 +24,10 @@ export class ClickdocHomepage {
   anmelden(){
     this.btnAnmelden.click();
   }
-
-
-  /*let suchfeld = element(by.xpath("//input[@data-web-test='lp-search-input']"));
-  let ohneErgebnis = element(by.xpath("//span[@class='dropdown-header no-results ng-star-inserted']"));
-  let email = element(by.xpath("//iframe[@data-web-test='login_email']"));
-  let password = element(by.xpath("//iframe[@data-web-test='login_password']"));
-  let btnAnmelden = element(by.buttonText("Anmelden"));
-*/
+ 
   urlAufruf() {
-    browser.manage().window().maximize();
     browser.waitForAngularEnabled(false);
+    browser.manage().window().maximize();
     browser.get('https://clickdoc.de/cd-de/');
     browser.sleep(2000);
   }
