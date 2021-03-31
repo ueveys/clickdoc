@@ -7,7 +7,7 @@ describe('Clickdoc Homepage', function () {
     let clickdocHome = new ClickdocHomepage();
     //Navigation
     browser.waitForAngularEnabled(false);
-    browser.manage().window().maximize();
+    browser.manage().window().setSize(1280, 1024);
     clickdocHome.urlAufruf();
     //Act
     // Assert
