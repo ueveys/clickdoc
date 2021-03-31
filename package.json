@@ -1,7 +1,7 @@
 {
-  "name": "lampenwelt_qa",
+  "name": "clickdoc_qa",
   "version": "1.0.0",
-  "description": "framwork for lampenwelt_webseite",
+  "description": "framwork for clickdoc_webseite",
   "main": "index.js",
   "type": "commonjs",
   "bin": {
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "protractor ./JSFiles/protractor.conf.js",
-    "lampenwelt": "protractor ./JSFiles/lampenwelt.conf.js",
+    "clickdoc": "protractor ./JSFiles/clickdoc.conf.js",
     "cucumbertest": "protractor ./JSFiles/cucumber.conf.js",
     "pretest": "tsc",
     "protractor": "./node_modules/protractor/built/cli.js",

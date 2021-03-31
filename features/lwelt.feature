@@ -1,4 +1,4 @@
-Feature: Ich validier die Webseite vom Lampenwelt
+Feature: Ich validier die Webseite vom clickdoc
 
 Scenario: Webseite Addition testen
 
