@@ -9,6 +9,8 @@ export class ClickdocHomepage {
   email = element(by.xpath("//input[@id='mat-input-1']"));
   password = element(by.xpath("//input[@id='mat-input-2']"));
   btnAnmelden = element(by.xpath("//button[@class='life-primary-btn']"));
+  btnPatientenkarte = element(by.xpath("/html/body/app-root/div[2]/div/app-header/div/div[2]/div/div[2]/ul/li[2]/a/span[3]"));
+  
 
   
   
@@ -29,4 +31,7 @@ export class ClickdocHomepage {
     browser.get('https://clickdoc.de/cd-de/');
   }
 
+  patientenKarteKlicken(){
+    this.btnPatientenkarte.click();
+  }
 }
