@@ -1,0 +1,48 @@
+{
+    "cookiesPopup":[
+         {
+            "Elementname": "Cookie Akzeptieren",
+            "lokatoren": "button.btn:nth-child(2)"
+        },
+
+        {
+            "Elementname": "Alle Akzeptieren",
+            "lokatoren": "button.btn:nth-child(3)"
+        }
+    ],
+    
+    "hompageIcons":[
+        {
+            "Elementname": "Profil",
+            "lokatoren": ".menu-item:nth-child(5) .bold-menu-text"
+        },
+
+        {
+            "Elementname": "Meine Termine",
+            "lokatoren": ".menu-item:nth-child(4) .bolder-menu)"
+        },
+
+        {
+            "Elementname": "Suchseite",
+            "lokatoren": ".menu-item:nth-child(3) .bolder-menu"
+        },
+        {
+            "Elementname": "Patientenakte",
+            "lokatoren": ".menu-item:nth-child(2) .bolder-menu"
+        },
+        {
+            "Elementname": "Health Center",
+            "lokatoren": ".menu-item:nth-child(1) .bolder-menu"
+        }
+
+    ],
+
+    "loginPopup":[
+
+        {
+            "Elementname": "Anmelden",
+            "lokatoren": ".d-none > .life-primary-btn"
+
+    ]
+
+}

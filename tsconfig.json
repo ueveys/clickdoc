@@ -25,7 +25,8 @@
     "website",
     "scripts",
     "exampleTypescript",
-    "spec/**/*" 
+    "spec/**/*",
+    "archiv" 
     
   ]
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
