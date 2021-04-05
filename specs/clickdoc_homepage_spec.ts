@@ -6,9 +6,7 @@ import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { LoginPopup } from "../pageObjects/clickdoc_loginPopup_page";
 
 describe('Clickdoc_Homepage-Test:', function () {
-    /*
-      
-    */
+    
     it('Loging-Popup call up',function(){
         browser.sleep(3000);
         ClickdocHomepage.profil.click();
@@ -28,7 +26,7 @@ describe('Clickdoc_Homepage-Test:', function () {
 
     });
 
-    it('TestCase6: User icon is visible .', async () => {
+    it('TestCase6: User icon is visible:', async () => {
         //After login, user icon is visible. 
         browser.sleep(3000);
         ClickdocHomepage.userIcon.isDisplayed();
@@ -37,6 +35,14 @@ describe('Clickdoc_Homepage-Test:', function () {
         expect(ClickdocHomepage.myprofil.getText()).toContain("Mein Profil")
         expect(ClickdocHomepage.logout.getText()).toContain("Logout");
 
+    });
+
+    it('TestCase7: Logout and Frontpage shown again:', async () => {
+        //After logout, user icon is not visible. 
+        browser.sleep(3000);
+        ClickdocHomepage.logout.click();
+        browser.sleep(3000);
+        expect(ClickdocHomepage.profil.getText()).toContain("Profil")
     });
 });
 

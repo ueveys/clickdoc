@@ -21,6 +21,11 @@ describe('Clickdoc_Login-Test:', function () {
         browser.sleep(3000);
         browser.switchTo().frame(3); 
     });
+
+    afterEach(function(){
+        browser.refresh();
+        browser.sleep(3000);  
+      });
 /*
     it('TestCase1: Check all fields in popup login window: ', function(){
 
@@ -71,13 +76,8 @@ describe('Clickdoc_Login-Test:', function () {
     });
     */
 
-   it('leer',function(){
+    it('leer ', function(){
 
-   });
-
-   afterEach(function(){
-      browser.refresh();
-      browser.sleep(3000);  
     });
 
 });
