@@ -17,8 +17,8 @@ export let config: Config = {
     // to protractor (in this example conf.js).
     // They may include glob patterns.
     specs: [
-      './specs/clickdoc_login_spec.js',
-      './specs/clickdoc_homepage_spec.js'
+      './specs/clickdoc_login-part1_spec.js',
+      './specs/clickdoc_login-part2_spec.js'
     ],
     //specs: ['./specs/jsonprobe.js'],
   
