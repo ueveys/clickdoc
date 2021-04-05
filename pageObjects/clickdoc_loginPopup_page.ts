@@ -13,6 +13,7 @@ export class LoginPopup {
   public static hinweismeldungPassword = element(by.css("p.ng-star-inserted:nth-child(4)"));
   public static hinweismeldungEmail = element(by.css(".error-container"));
   public static btnJetztRegistirieren = element(by.xpath("//button[@class='life-primary-btn' and contains(text(),'Jetzt registrieren')]"));
+  public static hinweisFehlendePassword = element(by.css("#mat-error-1"));
   
   
   static mailAdresseAngeben(mailadresse: string){

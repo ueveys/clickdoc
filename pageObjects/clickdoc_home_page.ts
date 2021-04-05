@@ -5,24 +5,17 @@ export class ClickdocHomepage {
 
   
   
-  //cookies = $('button.btn:nth-child(2)');
-  //profil = element(by.xpath("//li[@class='menu-item fullOpacity ng-tns-c119-0 ng-star-inserted']"));
-  profil = element(by.css('.menu-item:nth-child(5) .bold-menu-text'));
-  //login = element(by.css(".menu-item:nth-child(5) .bold-menu-text"));
- 
-  btnPatientenkarte = element(by.xpath("/html/body/app-root/div[2]/div/app-header/div/div[2]/div/div[2]/ul/li[2]/a/span[3]"));
+  public static profil = element(by.css('.menu-item:nth-child(5) .bold-menu-text'));
+  public static favoriten = element(by.css('.menu-item:nth-child(5) .bolder-menu'));
+  //public static userIcon = element(by.css(".user-profile-dropdown-toggle > app-avatar:nth-child(1) > div:nth-child(1) > img")); 
+  public static userIcon = element(by.css(".menu-item:nth-child(6) .avatar-image"));
+  public static myprofil = element(by.css(".dropdown-item:nth-child(1) .menu-text"));
+  public static logout = element(by.css(".dropdown-item:nth-child(2) .menu-text"));
+  public static btnCookiesAkzep = element(by.css('button.btn:nth-child(2)'));
+  
   
   urlAufruf() {
     browser.get(BASE_URL);
   }
 
-  
-
-  profilIconKlicken(){
-    this.profil.click();
-  }
-
-  patientenKarteKlicken(){
-    this.btnPatientenkarte.click();
-  }
 }
