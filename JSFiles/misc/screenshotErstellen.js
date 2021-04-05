@@ -1,8 +1,0 @@
-"use strict";
-var fs = require('fs');
-function writeScreenShot(data, filename) {
-    var stream = fs.createWriteStream(filename);
-    stream.write(new Buffer(data, 'base64'));
-    stream.end();
-}
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2NyZWVuc2hvdEVyc3RlbGxlbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL21pc2Mvc2NyZWVuc2hvdEVyc3RlbGxlbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsSUFBSSxFQUFFLEdBQUcsT0FBTyxDQUFDLElBQUksQ0FBQyxDQUFDO0FBRXZCLFNBQVMsZUFBZSxDQUFDLElBQVcsRUFBRSxRQUFlO0lBQ2pELElBQUksTUFBTSxHQUFHLEVBQUUsQ0FBQyxpQkFBaUIsQ0FBQyxRQUFRLENBQUMsQ0FBQztJQUU1QyxNQUFNLENBQUMsS0FBSyxDQUFDLElBQUksTUFBTSxDQUFDLElBQUksRUFBRSxRQUFRLENBQUMsQ0FBQyxDQUFDO0lBQ3pDLE1BQU0sQ0FBQyxHQUFHLEVBQUUsQ0FBQztBQUNqQixDQUFDIn0=

@@ -5,11 +5,11 @@ import { ProtractorHelper } from "../helpers/protractor.helper";
 import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { LoginPopup } from "../pageObjects/clickdoc_loginPopup_page";
 
-describe('Clickdoc Homepage', function () {
+describe('Clickdoc_Login-Popup:', function () {
 
     
     const clickdocHome = new ClickdocHomepage();
-    const loginPopupInst = new LoginPopup();
+    //const loginPopupInst = new LoginPopup();
 
     beforeAll(function() {
         const clickdocHome = new ClickdocHomepage();
@@ -20,40 +20,67 @@ describe('Clickdoc Homepage', function () {
         var cookies = element(by.css('button.btn:nth-child(2)')).click();
     });
 
-    it('Login dialog aufrufen: ', function(){
-        
+    beforeEach(function(){
         browser.sleep(3000);
         clickdocHome.profilIconKlicken();
+        browser.sleep(3000);
+        browser.switchTo().frame(3); 
     });
 
-    it('Alle Felder in Popup-Login fenster prüfen', function(){
+    it('Alle Felder in Popup-Login Fenster prüfen', function(){
 
         browser.sleep(3000);
-        browser.switchTo().frame(3);
-        browser.sleep(3000);
-        loginPopupInst.closeIconistVorhanden();
-        loginPopupInst.btnRegisteristVorhanden();
-        loginPopupInst.inputMailistVorhanden();
-        loginPopupInst.inputPasswordistVorhanden();
-        loginPopupInst.btnLoginistVorhanden();
-        loginPopupInst.btnPasswordForgotistVorhanden();
-
-    });
-
-    it('Schriftfarbe der Inputfelder bei der fehlenden Angabe prüfen.', function(){
-        browser.sleep(3000);
-        loginPopupInst.btnLogin.click();
-        browser.sleep(3000);
-        expect(loginPopupInst.inputMail.getCssValue('caret-color')).toBe('rgb(244, 67, 54)');
-        expect(loginPopupInst.inputPassword.getCssValue('caret-color')).toBe('rgb(244, 67, 54)');
+        LoginPopup.closeIcon.isPresent();
+        LoginPopup.inputMail.isDisplayed();
+        LoginPopup.inputPassword.isDisplayed();
+        LoginPopup.btnPasswordForgot.isDisplayed();
+        LoginPopup.btnLogin.isDisplayed();
+        LoginPopup.btnRegister.isDisplayed();
 
     });
 
-    it('Abschluss', function(){
-        console.log("Test ist abgeschlossen!");
-        
+    it('Schriftfarbe der Inputfelder bei den fehlenden Angaben prüfen.', function(){
+        browser.sleep(3000);
+        LoginPopup.btnLogin.click();
+        expect(LoginPopup.inputMail.getCssValue('caret-color')).toBe('rgb(244, 67, 54)');
+        expect(LoginPopup.inputPassword.getCssValue('caret-color')).toBe('rgb(244, 67, 54)');
+        browser.sleep(3000);
+       
     });
-  
+
+    it('Angabekombination: korrekte Email und inkorrekte Password prüfen', function(){
+
+        LoginPopup.inputMail.sendKeys(CLICKDOC_USERNAME);
+        //Inkoorekte Password
+        LoginPopup.inputPassword.sendKeys("abcdefg");
+        //Felder werden gültig angeziegt ohne rot markierung!
+        expect(LoginPopup.inputMail.getCssValue('caret-color')).toBe('rgb(0, 51, 102)');
+        expect(LoginPopup.inputPassword.getCssValue('caret-color')).toBe('rgb(0, 51, 102)');
+        browser.sleep(2000);
+        //Feld für Inputfeld Mail korrekt aber bei Inputfeld Password inkorrekt angezeigt:
+        LoginPopup.btnLogin.click();
+        browser.sleep(2000);
+        expect(LoginPopup.hinweismeldungPassword.getText()).toContain("Passwort wurde nicht auf Korrektheit geprüft")
+    });
+ 
+
+    it('Angabekombination: inkorrekte Email und Password prüfen', function(){
+
+        LoginPopup.inputMail.sendKeys("testmail.com");
+        LoginPopup.inputPassword.sendKeys("asdadadf");
+        browser.sleep(1000);
+        LoginPopup.btnLogin.click();
+        browser.sleep(4000);
+        expect(LoginPopup.hinweismeldungEmail.getText()).toContain("Bitte überprüfen Sie Ihre Eingaben und probieren Sie es erneut. Haben Sie noch keine CGM LIFE ID?");
+        browser.sleep(2000);
+        LoginPopup.btnJetztRegistirieren.isDisplayed();
+    });
+
+
+   afterEach(function(){
+       browser.refresh();
+
+    });
 
 });
 

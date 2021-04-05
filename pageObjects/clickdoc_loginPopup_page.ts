@@ -2,57 +2,41 @@ import {browser, element, by, promise} from 'protractor';
 
 export class LoginPopup {
 
-  closeIcon = element(by.xpath("//span[@class='iframe-dialog-close icon icon-CO_close']"))
-  inputMail = element(by.css("#mat-input-1"));
-  inputPassword = element(by.css("#mat-input-2"));
-  btnPasswordForgot = element(by.xpath("//a[@data-web-test='login_forgot_password']"));
-  btnRegister = element(by.xpath("//button[@data-web-test='login_register_btn']"));
+  public static closeIcon = element(by.xpath("//span[@class='iframe-dialog-close icon icon-CO_close']"));
+  //closeIcon = element(by.css('.iframe-dialog-close'));
+  public static inputMail = element(by.css("#mat-input-1"));
+  public static inputPassword = element(by.css("#mat-input-2"));
+  public static btnPasswordForgot = element(by.xpath("//a[@data-web-test='login_forgot_password']"));
+  public static btnRegister = element(by.xpath("//button[@data-web-test='login_register_btn']"));
   //btnLogin = element(by.xpath("//button[@class='life-primary-btn']"));
-  btnLogin = element(by.css(".d-none > .life-primary-btn"));
+  public static btnLogin = element(by.css(".d-none > .life-primary-btn"));
+  public static hinweismeldungPassword = element(by.css("p.ng-star-inserted:nth-child(4)"));
+  public static hinweismeldungEmail = element(by.css(".error-container"));
+  public static btnJetztRegistirieren = element(by.xpath("//button[@class='life-primary-btn' and contains(text(),'Jetzt registrieren')]"));
   
   
-  mailAdresseAngeben(mailadresse: string){
+  static mailAdresseAngeben(mailadresse: string){
       this.inputMail.sendKeys(mailadresse);
   }
 
-  passwordEingeben(password: string){
+  static passwordEingeben(password: string){
     this.inputPassword.sendKeys(password);
   }
 
-  anmeldenKlicken(){
+  static anmeldenKlicken(){
       this.btnLogin.click();
   }
   
-  neuIDRegistrieren(){
+  static neuIDRegistrieren(){
       this.btnRegister.click();
   }
 
-  passwordVergessenKlicken(){
+  static passwordVergessenKlicken(){
       this.btnPasswordForgot.click();
   }
 
-  closeIconistVorhanden(){
-    return this.closeIcon.isPresent();
-  }
-
-  inputMailistVorhanden(){
-    return this.inputMail.isPresent();
-  }
-
-  inputPasswordistVorhanden(){
-    return this.inputPassword.isPresent();
-  }
-
-  btnPasswordForgotistVorhanden(){
-    return this.btnPasswordForgot.isPresent();
-  }
-
-  btnRegisteristVorhanden(){
-    return this.btnRegister.isPresent();
-  }
-
-  btnLoginistVorhanden(){
-    return this.btnLogin.isPresent();
+  static loginPopupFensterschliessen(){
+    this.closeIcon.click();
   }
  
 }
