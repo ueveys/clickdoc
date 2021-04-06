@@ -8,12 +8,7 @@ import { LoginPopup } from "../pageObjects/clickdoc_loginPopup_page";
 describe('Clickdoc_Login-Part1:', function () {
 
     beforeAll(function() {
-        browser.get(BASE_URL);
-        const title = ProtractorHelper.getPageTitle();
-        expect(title).toContain('CLICKDOC');
-        browser.sleep(2000);
-        ClickdocHomepage.btnCookiesAkzep.click();
-        browser.sleep(3000);
+      ClickdocHomepage.webseiteStarten();
     });
 
     beforeEach(function(){
@@ -30,11 +25,11 @@ describe('Clickdoc_Login-Part1:', function () {
     it('TestCase1: Check all fields in popup login window: ', function(){
 
         LoginPopup.closeIcon.isPresent();
-        LoginPopup.inputMail.isDisplayed();
-        LoginPopup.inputPassword.isDisplayed();
-        LoginPopup.btnPasswordForgot.isDisplayed();
-        LoginPopup.btnLogin.isDisplayed();
-        LoginPopup.btnRegister.isDisplayed();
+        LoginPopup.inputMail.isPresent();
+        LoginPopup.inputPassword.isPresent();
+        LoginPopup.btnPasswordForgot.isPresent();
+        LoginPopup.btnLogin.isPresent();
+        LoginPopup.btnRegister.isPresent();
         expect(LoginPopup.btnLogin.getText()).toContain("ANMELDEN");
 
     });
@@ -72,11 +67,6 @@ describe('Clickdoc_Login-Part1:', function () {
         expect(LoginPopup.hinweisFehlendePassword.getText()).toContain("Bitte geben Sie Ihr Passwort ein.");
         expect(LoginPopup.inputPassword.getCssValue('caret-color')).toBe('rgb(244, 67, 54)');
         browser.sleep(2000);
-    });
-    
-
-    it('leer ', function(){
-
     });
 
 });

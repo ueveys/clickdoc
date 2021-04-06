@@ -29,7 +29,7 @@ describe('Clickdoc_Login-Part2:', function () {
     it('TestCase6: User icon is visible:', async () => {
         //After login, user icon is visible. 
         browser.sleep(3000);
-        ClickdocHomepage.userIcon.isDisplayed();
+        ClickdocHomepage.userIcon.isPresent();
         browser.sleep(2000);
         ClickdocHomepage.userIcon.click();
         expect(ClickdocHomepage.myprofil.getText()).toContain("Mein Profil")

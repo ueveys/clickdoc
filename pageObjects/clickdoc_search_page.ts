@@ -1,11 +1,18 @@
 import {browser, element, by, promise} from 'protractor';
 import { BASE_URL } from '../environment/environment';
+import { ProtractorHelper } from '../helpers/protractor.helper';
 
 export class ClickdocSearchpage {
 
   public static areaOption = element(by.css("div.col-md-4:nth-child(3)"));
   public static areaResult = element(by.css("div.col-sm-12:nth-child(4)"));
-  public static inputFachbereich = element(by.css('#search-query-typeahead'));
+  public static areaResultContainer = element(by.css("app-contact-card.ng-star-inserted:nth-child(1)"));
+  public static areaResultContainerItemHeader = element(by.xpath("//app-contact-card[1]//app-contact-header[@class='ng-star-inserted']"));
+  public static areaResultContainerItemPracticeInfo = element(by.xpath("//app-contact-card[1]//div[@class='about-container']"));
+  public static areaResultContainerItemPracticeInfoTitel = element(by.xpath("//app-contact-card[1]//div[@class='about-container']//h4[contains(text(),'Name der Gesundheitseinrichtung')]"));
+  public static areaResultContainerItemAppointment = element(by.xpath("//app-contact-card[1]//app-contact-slots-details"));
+  public static areaResultContainerLoadMoreLink = element(by.xpath("//a[@class='load-more-link']"));
+  public static inputName = element(by.css('#search-query-typeahead'));
   public static inputLokation = element(by.css("#search-location-typeahead"));
   public static checkboxOnlineTermin = element(by.css("#onlineBooking"));
   public static checkboxVideoSprechstunde = element(by.css("#videoCall"));
@@ -25,5 +32,21 @@ export class ClickdocSearchpage {
   public static radiobtnEntfernung200KM = element(by.css("span.ng5-slider-tick:nth-child(5)"));
   public static radiobtnEntfernung200KMPlus = element(by.css("span.ng5-slider-tick:nth-child(6)"));
   public static initialMessageResultArea = element(by.css(".card-title > span"));
-  
+  public static inputNameDropdownItem = element(by.xpath("//span[@class='dropdown-item-inner']"));
+
+  public static dropdownItemValidate(name: string){
+    //this.inputName.sendKeys(name);
+    ProtractorHelper.fillTextAreaTo(this.inputName, name);
+    browser.sleep(3000);
+    expect(this.inputNameDropdownItem.getText()).toContain(name);
+
+  }
+
+  public static dropdownItemDisapp(name: string){
+    //this.inputName.sendKeys(name);
+    ProtractorHelper.fillTextAreaTo(this.inputName, name);
+    browser.sleep(3000);
+    expect(this.inputNameDropdownItem.getText()).not.toContain(name);
+
+  }
 }

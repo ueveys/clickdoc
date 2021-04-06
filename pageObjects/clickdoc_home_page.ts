@@ -1,5 +1,6 @@
 import {browser, element, by, promise} from 'protractor';
 import { BASE_URL } from '../environment/environment';
+import { ProtractorHelper } from '../helpers/protractor.helper';
 
 export class ClickdocHomepage {
 
@@ -14,4 +15,12 @@ export class ClickdocHomepage {
   public static logout = element(by.css(".dropdown-item:nth-child(2) .menu-text"));
   public static suchseite = element(by.css(".menu-item:nth-child(3) .bolder-menu"));
 
+  public static webseiteStarten(){
+        browser.get(BASE_URL);
+        const title = ProtractorHelper.getPageTitle();
+        expect(title).toContain('CLICKDOC');
+        browser.sleep(2000);
+        ClickdocHomepage.btnCookiesAkzep.click();
+        browser.sleep(3000);
+  }
 }
