@@ -6,7 +6,7 @@ import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { LoginPopup } from "../pageObjects/clickdoc_loginPopup_page";
 
 describe('Clickdoc_Login-Part1:', function () {
-
+    browser.logger.info("Clickdoc_Login-Part1 startet:");
     beforeAll(function() {
       ClickdocHomepage.webseiteStarten();
     });
@@ -23,7 +23,7 @@ describe('Clickdoc_Login-Part1:', function () {
       });
 
     it('TestCase1: Check all fields in popup login window: ', function(){
-
+        browser.logger.info("TestCase1: Check all fields in popup login window");
         LoginPopup.closeIcon.isPresent();
         LoginPopup.inputMail.isPresent();
         LoginPopup.inputPassword.isPresent();
@@ -35,7 +35,7 @@ describe('Clickdoc_Login-Part1:', function () {
     });
 
     it('TestCase2: Check font color of the input-fields in the missing information:', function(){
-
+        browser.logger.info("TestCase2: Check font color of the input-fields in the missing information");
         LoginPopup.btnLogin.click();
         expect(LoginPopup.inputMail.getCssValue('caret-color')).toBe('rgb(244, 67, 54)');
         expect(LoginPopup.inputPassword.getCssValue('caret-color')).toBe('rgb(244, 67, 54)');
@@ -43,7 +43,7 @@ describe('Clickdoc_Login-Part1:', function () {
     });
 
     it('TestCase3: Indication Combination: Check correct email with incorrect password:', function(){
-
+        browser.logger.info("TestCase3: Indication Combination: Check correct email with incorrect password");
         LoginPopup.inputMail.sendKeys(CLICKDOC_USERNAME);
         //Inkoorekte Password
         LoginPopup.inputPassword.sendKeys("abcdefg");
@@ -59,7 +59,7 @@ describe('Clickdoc_Login-Part1:', function () {
  
 
     it('TestCase4: Indication Combination: Check incorrect email without password:', function(){
-
+        browser.logger.info("TestCase4: Indication Combination: Check incorrect email without password");
         LoginPopup.inputMail.sendKeys("testmail.com");
         browser.sleep(1000);
         LoginPopup.btnLogin.click();

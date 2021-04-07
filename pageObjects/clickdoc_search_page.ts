@@ -25,11 +25,11 @@ export class ClickdocSearchpage {
   public static checkboxOnlineTerminDay = element(by.css(".day > button"));
   public static checkboxOnlineTerminTime = element(by.css(".time > button"));
   public static checkboxVideoSprechstunde = element(by.xpath("//input[@id='videoCall']/following::label[@for='videoCall']"));
-  public static checkboxBarrierefreiheit = element(by.css("#accessibility"));
+  public static checkboxBarrierefreiheit = element(by.xpath("//span[@translate='search.filter.checkbox.accessibility']"));
   public static btnSuchen = element(by.xpath("//button[@class='btn btn-primary btn-block']"));
   public static radiobtnBesteErgebnisse = element(by.css("#bestHit"));
   public static radiobtnBesteErgebnisseLabel = element(by.xpath("//label[contains(.,'Beste Ergebnisse')]"));
-  public static radiobtnAlphabetisch = element(by.css("#sortAlphabetically"));
+  public static radiobtnAlphabetisch = element(by.xpath("//div[@class='container sort-container']//div[@class='row sort-section' and position()=2]"));
   public static radiobtnAlphabetischAUFsteigend = element(by.css("#ascending"));
   public static radiobtnAlphabetischABsteigend = element(by.css("#descending"));
   public static radiobtnEntfernung = element(by.css("#noLocation"));
@@ -42,14 +42,8 @@ export class ClickdocSearchpage {
   public static radiobtnEntfernung200KMPlus = element(by.css("span.ng5-slider-tick:nth-child(6)"));
   public static initialMessageResultArea = element(by.css(".card-title > span"));
   public static inputNameDropdownItem = element(by.xpath("//span[@class='dropdown-item-inner']"));
-
-  public static dropdownItemValidate(name: string){
-    //this.inputName.sendKeys(name);
-    ProtractorHelper.fillTextAreaTo(this.inputName, name);
-    browser.sleep(3000);
-    expect(this.inputNameDropdownItem.getText()).toContain(name);
-
-  }
+  public static nameDoctor = element(by.xpath("//div[@class='contact-header-container']//h2")); 
+  public static nameAA = element(by.xpath("//h2[contains(text(),'A Aa')]"));
 
   public static dropdownItemDisapp(name: string){
     //this.inputName.sendKeys(name);
@@ -58,4 +52,23 @@ export class ClickdocSearchpage {
     expect(this.inputNameDropdownItem.getText()).not.toContain(name);
 
   }
+
+  public static checkboxDeaktivieren(checkboxID:any){
+    element(by.xpath(`${checkboxID}`)).isSelected().then(function(checkbox){
+      if(checkbox===true){
+        element(by.xpath(`${checkboxID}`)).click();
+      }
+  });
+}
+
+public static checkboxAktivieren(checkboxID:any){
+  element(by.xpath(`${checkboxID}`)).isSelected().then(function(checkbox){
+    if(checkbox===false){
+        element(by.xpath(`${checkboxID}`)).click();
+    }
+});
+}
+
+
+  
 }
