@@ -1,7 +1,5 @@
-import { browser, by, element, WebDriver } from "protractor";
-import { DriverProvider } from "protractor/built/driverProviders";
-import { BASE_URL, CLICKDOC_PASSWORD, CLICKDOC_USERNAME } from "../environment/environment";
-import { ProtractorHelper } from "../helpers/protractor.helper";
+import { browser } from "protractor";
+import { CLICKDOC_PASSWORD, CLICKDOC_USERNAME } from "../environment/environment";
 import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { LoginPopup } from "../pageObjects/clickdoc_loginPopup_page";
 

@@ -1,10 +1,7 @@
-import {browser, element, by, promise} from 'protractor';
+import {browser, element, by } from 'protractor';
 import { BASE_URL } from '../environment/environment';
-import { ProtractorHelper } from '../helpers/protractor.helper';
 
 export class ClickdocHomepage {
-
-  
   
   public static btnCookiesAkzep = element(by.css('button.btn:nth-child(2)'));
   public static profil = element(by.css('.menu-item:nth-child(5) .bold-menu-text'));
@@ -20,7 +17,7 @@ export class ClickdocHomepage {
         browser.waitForAngularEnabled(false);
         browser.manage().window().maximize();
         browser.get(BASE_URL);
-        const title = ProtractorHelper.getPageTitle();
+        const title = browser.getTitle()
         expect(title).toContain('CLICKDOC');
         browser.sleep(2000);
         ClickdocHomepage.btnCookiesAkzep.click();
