@@ -6,8 +6,8 @@ import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { LoginPopup } from "../pageObjects/clickdoc_loginPopup_page";
 
 describe('Clickdoc_Login-Part2:', function () {
-    browser.logger.info("Clickdoc_Login-Part2 startet");
     it('Loging-Popup call up',function(){
+        browser.logger.info("Clickdoc_Login-Part2 startet");
         browser.logger.info("Loging-Popup call up");
         browser.sleep(3000);
         ClickdocHomepage.profil.click();

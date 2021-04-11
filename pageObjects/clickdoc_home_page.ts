@@ -16,6 +16,9 @@ export class ClickdocHomepage {
   public static suchseite = element(by.css(".menu-item:nth-child(3) .bolder-menu"));
 
   public static webseiteStarten(){
+
+        browser.waitForAngularEnabled(false);
+        browser.manage().window().maximize();
         browser.get(BASE_URL);
         const title = ProtractorHelper.getPageTitle();
         expect(title).toContain('CLICKDOC');
