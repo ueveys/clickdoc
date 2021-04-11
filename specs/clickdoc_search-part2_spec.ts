@@ -1,22 +1,23 @@
 import { $$, browser, by, element, Key, promise, WebDriver } from "protractor";
 import { DriverProvider } from "protractor/built/driverProviders";
+import { BASE_URL } from "../environment/environment";
 import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { ClickdocSearchpage } from "../pageObjects/clickdoc_search_page";
 var helpers = require('protractor-helpers');
 
 describe('Clickdoc_SearchPage-Part1:', function () {
         
-  /*  it('Call URL and Searchpage:', function () {
-        
-        browser.logger.info("Call URL and Searchpage");
-        ClickdocHomepage.webseiteStarten();
-        ClickdocHomepage.suchseite.click();
-        browser.sleep(1000);
-        browser.getCurrentUrl().then(function(text){
-            expect(text).toContain("search");
-        });
+    it('Call the browser again:',function(){
+        browser.get(BASE_URL);
     });
-    */
+    
+    it('Go to the search page:', function(){
+        browser.sleep(3000);
+        ClickdocHomepage.suchseite.click();
+        helpers.waitForElement(ClickdocSearchpage.inputName, 5000);
+        ClickdocSearchpage.inputName.clear();
+    });
+    
     it('TestCase16: Check Video-Conference-Checkbox, Only the doctors with videoconference displayed:', function(){
         
         browser.logger.info("TestCase16: Check Video-Conference-Checkbox, Only the doctors with videoconference displayed:");

@@ -18,11 +18,17 @@ describe('Clickdoc_SearchPage-Part1:', function () {
     browser.logger.info("Clickdoc_SearchPage-Part1 startet");
     beforeAll(function() {
         ClickdocHomepage.suchseite.click();
-        browser.sleep(1000);
+        
+      });
+
+it('Auf die Such', function(){
+
+    ClickdocHomepage.suchseite.click();
+    browser.sleep(1000);
         browser.getCurrentUrl().then(function(text){
             expect(text).toContain("search");
         });
-      });
+});
 
         it('TestCase1: Check areas of option and result in the search page:', function(){
 

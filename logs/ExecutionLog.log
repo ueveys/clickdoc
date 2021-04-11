@@ -1,32 +1,33 @@
-[2021-04-07T15:54:47.402] [INFO] protractorLog4js - Clickdoc_Login-Part1 startet:
-[2021-04-07T15:54:47.417] [INFO] protractorLog4js - Clickdoc_Login-Part2 startet
-[2021-04-07T15:54:47.441] [INFO] protractorLog4js - Clickdoc_SearchPage-Part1 startet
-[2021-04-07T15:54:57.177] [INFO] protractorLog4js - TestCase1: Check all fields in popup login window
-[2021-04-07T15:55:03.907] [INFO] protractorLog4js - TestCase2: Check font color of the input-fields in the missing information
-[2021-04-07T15:55:10.678] [INFO] protractorLog4js - TestCase3: Indication Combination: Check correct email with incorrect password
-[2021-04-07T15:55:22.579] [INFO] protractorLog4js - TestCase4: Indication Combination: Check incorrect email without password
-[2021-04-07T15:55:31.218] [INFO] protractorLog4js - Loging-Popup call up
-[2021-04-07T15:55:37.790] [INFO] protractorLog4js - TestCase5: Indication Combination: Check correct email and password
-[2021-04-07T15:55:41.424] [INFO] protractorLog4js - TestCase6: User icon is visible
-[2021-04-07T15:55:46.999] [INFO] protractorLog4js - TestCase7: Logout and Frontpage shown again
-[2021-04-07T15:55:54.550] [INFO] protractorLog4js - TestCase1: Check areas of option and result in the search page
-[2021-04-07T15:55:55.882] [INFO] protractorLog4js - TestCase2: Option elements are present
-[2021-04-07T15:55:56.290] [INFO] protractorLog4js - TestCase3: Sorting-Sections are present
-[2021-04-07T15:55:56.660] [INFO] protractorLog4js - TestCase4: Check initial message result area
-[2021-04-07T15:55:56.998] [INFO] protractorLog4js - TestCase5: Check drop-down list of Input Name
-[2021-04-07T15:55:58.167] [INFO] protractorLog4js - TestCase6: Check drop-down list of Input Name further specified
-[2021-04-07T15:55:58.951] [INFO] protractorLog4js - TestCase7: Check drop-down list of Input Name which no results exist
-[2021-04-07T15:55:59.704] [INFO] protractorLog4js - TestCase8: Check drop-down list of Input Name
-[2021-04-07T15:56:00.960] [INFO] protractorLog4js - After TestCase 8 input field clean
-[2021-04-07T15:56:01.340] [INFO] protractorLog4js - TestCase9: Check an elements of one result-item
-[2021-04-07T15:56:01.772] [INFO] protractorLog4js - TestCase10: Scroll to the link Show more in the page
-[2021-04-07T15:56:04.125] [INFO] protractorLog4js - TestCase11: After Click the „Show more“-Button additional results are loaded:
-[2021-04-07T15:56:07.500] [INFO] protractorLog4js - TestCase12: Enter location and check the suggestions:
-[2021-04-07T15:56:10.159] [INFO] protractorLog4js - TestCase13: Check the inputfield for timeframe:
-[2021-04-07T15:56:16.561] [INFO] protractorLog4js - TestCase14: Only the results have been displayed with online appointment.
-[2021-04-07T15:56:21.953] [INFO] protractorLog4js - TestCase15: Check Barrier-Free-Checkbox, Only the doctors with barrier-free state displayed
-[2021-04-07T15:56:22.421] [INFO] protractorLog4js - TestCase15: part 2
-[2021-04-07T15:56:27.795] [INFO] protractorLog4js - TestCase16: Check Video-Conference-Checkbox, Only the doctors with videoconference displayed:
-[2021-04-07T15:56:28.724] [INFO] protractorLog4js - TestCase16: part 2 Checkbox validieren
-[2021-04-07T15:56:29.123] [INFO] protractorLog4js - TestCase16: part3
-[2021-04-07T15:56:37.552] [INFO] protractorLog4js - TestCase17: Alphabetical-Sort-Option
+[2021-04-11T08:56:38.314] [INFO] protractorLog4js - Clickdoc_Login-Part1 startet:
+[2021-04-11T08:56:38.339] [INFO] protractorLog4js - Clickdoc_SearchPage-Part1 startet
+[2021-04-11T08:56:47.950] [INFO] protractorLog4js - TestCase1: Check all fields in popup login window
+[2021-04-11T08:56:54.671] [INFO] protractorLog4js - TestCase2: Check font color of the input-fields in the missing information
+[2021-04-11T08:57:01.398] [INFO] protractorLog4js - TestCase3: Indication Combination: Check correct email with incorrect password
+[2021-04-11T08:57:13.311] [INFO] protractorLog4js - TestCase4: Indication Combination: Check incorrect email without password
+[2021-04-11T08:57:21.949] [INFO] protractorLog4js - Clickdoc_Login-Part2 startet
+[2021-04-11T08:57:21.949] [INFO] protractorLog4js - Loging-Popup call up
+[2021-04-11T08:57:28.542] [INFO] protractorLog4js - TestCase5: Indication Combination: Check correct email and password
+[2021-04-11T08:57:32.152] [INFO] protractorLog4js - TestCase6: User icon is visible
+[2021-04-11T08:57:37.680] [INFO] protractorLog4js - TestCase7: Logout and Frontpage shown again
+[2021-04-11T08:57:45.618] [INFO] protractorLog4js - TestCase1: Check areas of option and result in the search page
+[2021-04-11T08:57:46.948] [INFO] protractorLog4js - TestCase2: Option elements are present
+[2021-04-11T08:57:47.350] [INFO] protractorLog4js - TestCase3: Sorting-Sections are present
+[2021-04-11T08:57:47.716] [INFO] protractorLog4js - TestCase4: Check initial message result area
+[2021-04-11T08:57:48.030] [INFO] protractorLog4js - TestCase5: Check drop-down list of Input Name
+[2021-04-11T08:57:48.761] [INFO] protractorLog4js - TestCase6: Check drop-down list of Input Name further specified
+[2021-04-11T08:57:49.487] [INFO] protractorLog4js - TestCase7: Check drop-down list of Input Name which no results exist
+[2021-04-11T08:57:50.217] [INFO] protractorLog4js - TestCase8: Check drop-down list of Input Name
+[2021-04-11T08:57:52.334] [INFO] protractorLog4js - After TestCase 8 input field clean
+[2021-04-11T08:57:52.733] [INFO] protractorLog4js - TestCase9: Check an elements of one result-item
+[2021-04-11T08:57:53.103] [INFO] protractorLog4js - TestCase10: Scroll to the link Show more in the page
+[2021-04-11T08:57:55.477] [INFO] protractorLog4js - TestCase11: After Click the „Show more“-Button additional results are loaded:
+[2021-04-11T08:57:58.811] [INFO] protractorLog4js - TestCase12: Enter location and check the suggestions:
+[2021-04-11T08:58:01.476] [INFO] protractorLog4js - TestCase13: Check the inputfield for timeframe:
+[2021-04-11T08:58:07.874] [INFO] protractorLog4js - TestCase14: Only the results have been displayed with online appointment.
+[2021-04-11T08:58:13.283] [INFO] protractorLog4js - TestCase15: Check Barrier-Free-Checkbox, Only the doctors with barrier-free state displayed
+[2021-04-11T08:58:13.758] [INFO] protractorLog4js - TestCase15: part 2
+[2021-04-11T08:58:23.713] [INFO] protractorLog4js - TestCase16: Check Video-Conference-Checkbox, Only the doctors with videoconference displayed:
+[2021-04-11T08:58:24.562] [INFO] protractorLog4js - TestCase16: part 2 Checkbox validieren
+[2021-04-11T08:58:24.914] [INFO] protractorLog4js - TestCase16: part3
+[2021-04-11T08:58:33.291] [INFO] protractorLog4js - TestCase12: Enter location and check the suggestions:
+[2021-04-11T08:58:39.632] [INFO] protractorLog4js - TestCase17: Alphabetical-Sort-Option

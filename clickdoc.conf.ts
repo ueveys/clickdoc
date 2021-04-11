@@ -12,7 +12,8 @@ export let config: Config = {
   
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-      browserName: 'chrome'
+      browserName: 'chrome',
+      //shardTestFiles: true,
     },
     
     framework: 'jasmine',
@@ -65,8 +66,7 @@ export let config: Config = {
     });
 
       browser.logger = log4js.getLogger('protractorLog4js');
-      browser.waitForAngularEnabled(false);
-      browser.manage().window().maximize();
+      
       jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
         savePath: './reports/html/',
         screenshotsFolder: 'images',
