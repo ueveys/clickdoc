@@ -1,7 +1,5 @@
-import { exitCode } from 'node:process';
-import {browser, element, by, promise, $$} from 'protractor';
-import { BASE_URL } from '../environment/environment';
-import { ProtractorHelper } from '../helpers/protractor.helper';
+import {browser, element, by} from 'protractor';
+var helpers = require('protractor-helpers');
 
 export class ClickdocSearchpage {
 
@@ -47,7 +45,7 @@ export class ClickdocSearchpage {
 
   public static dropdownItemDisapp(name: string){
     //this.inputName.sendKeys(name);
-    ProtractorHelper.fillTextAreaTo(this.inputName, name);
+    helpers.clearAndSetValue(this.inputName, name);
     browser.sleep(3000);
     expect(this.inputNameDropdownItem.getText()).not.toContain(name);
 

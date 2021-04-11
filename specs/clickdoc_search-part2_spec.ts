@@ -1,5 +1,4 @@
-import { $$, browser, by, element, Key, promise, WebDriver } from "protractor";
-import { DriverProvider } from "protractor/built/driverProviders";
+import { $$, browser, by, element } from "protractor";
 import { BASE_URL } from "../environment/environment";
 import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { ClickdocSearchpage } from "../pageObjects/clickdoc_search_page";

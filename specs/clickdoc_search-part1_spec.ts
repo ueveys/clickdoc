@@ -1,4 +1,4 @@
-import { $$, browser, by, element, Key, promise, WebDriver } from "protractor";
+import { $$, browser, by, element } from "protractor";
 import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { ClickdocSearchpage } from "../pageObjects/clickdoc_search_page";
 var helpers = require('protractor-helpers');
@@ -193,8 +193,6 @@ it('Auf die Such', function(){
                  }else{
                      expect(terminBtn).toBe(false);
                  }
-
-
             });
         })
     });

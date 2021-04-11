@@ -1,6 +1,5 @@
-import { $$, browser, by, element, Key, promise, WebDriver } from "protractor";
+import { browser } from "protractor";
 import { BASE_URL } from "../environment/environment";
-import { ProtractorHelper } from "../helpers/protractor.helper";
 import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { ClickdocSearchpage } from "../pageObjects/clickdoc_search_page";
 var helpers = require('protractor-helpers');

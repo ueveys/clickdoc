@@ -1,4 +1,4 @@
-import {browser, element, by, promise} from 'protractor';
+import { element, by } from 'protractor';
 
 export class LoginPopup {
 
