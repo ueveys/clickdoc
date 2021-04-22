@@ -4,79 +4,78 @@ import { ClickdocHomepage } from "../pageObjects/clickdoc_home_page";
 import { ClickdocSearchpage } from "../pageObjects/clickdoc_search_page";
 var helpers = require('protractor-helpers');
 
-describe('Clickdoc_SearchPage-Part1:', function () {
-        
-    it('Call the browser again:',function(){
-        browser.get(BASE_URL);
+describe('Clickdoc_SearchPage-Part1:', () => {
+
+    it('Call the browser again:', async () => {
+        await browser.get(BASE_URL);
     });
-    
-    it('Go to the search page:', function(){
-        browser.sleep(3000);
-        ClickdocHomepage.suchseite.click();
-        helpers.waitForElement(ClickdocSearchpage.inputName, 5000);
-        ClickdocSearchpage.inputName.clear();
+
+    it('Go to the search page:', async () => {
+        await browser.sleep(3000);
+        await ClickdocHomepage.suchseiteKlicken();
+        await helpers.waitForElement(ClickdocSearchpage.inputName, 5000);
+        await ClickdocSearchpage.inputName.clear();
     });
-    
-    it('TestCase16: Check Video-Conference-Checkbox, Only the doctors with videoconference displayed:', function(){
-        
-        browser.logger.info("TestCase16: Check Video-Conference-Checkbox, Only the doctors with videoconference displayed:");
+
+    it('TestCase16: Check Video-Conference-Checkbox, Only the doctors with videoconference displayed:', async () => {
+
+        await browser.logger.info("TestCase16: Check Video-Conference-Checkbox, Only the doctors with videoconference displayed:");
         //befor test clean input field of name
-        ClickdocSearchpage.inputLokation.clear();
-        helpers.clearAndSetValue(ClickdocSearchpage.inputLokation, '56567');
-        helpers.waitForElement(ClickdocSearchpage.inputLokationFirsSuggestion, 3000);
-        ClickdocSearchpage.inputLokationFirsSuggestion.click();
-        helpers.waitForElement(ClickdocSearchpage.checkboxVideoSprechstunde, 5000);
-        ClickdocSearchpage.checkboxVideoSprechstunde.click();
+        await ClickdocSearchpage.inputLokation.clear();
+        await helpers.clearAndSetValue(ClickdocSearchpage.inputLokation, '56567');
+        await helpers.waitForElement(ClickdocSearchpage.inputLokationFirsSuggestion, 3000);
+        await ClickdocSearchpage.inputLokationFirsSuggestion.click();
+        await helpers.waitForElement(ClickdocSearchpage.checkboxVideoSprechstunde, 5000);
+        await ClickdocSearchpage.checkboxVideoSprechstundeAktivieren();
     });
 
-    it('TestCase16: part 2 Checkbox validieren',function(){
-        browser.logger.info("TestCase16: part 2 Checkbox validieren");
-        element(by.css('#videoCall')).isSelected().then(function(checkbox){
-            if(checkbox===false){
-                ClickdocSearchpage.checkboxVideoSprechstunde.click();
-            }
-        });
-        
-         element(by.css('#onlineBooking')).isSelected().then(function(checkbox){
-            if(checkbox===true){
-                ClickdocSearchpage.checkboxOnlineTermin.click();
+    it('TestCase16: part 2 Checkbox validieren', async () => {
+        await browser.logger.info("TestCase16: part 2 Checkbox validieren");
+        await element(by.css('#videoCall')).isSelected().then(async (checkbox) => {
+            if (checkbox === false) {
+                await ClickdocSearchpage.checkboxVideoSprechstundeAktivieren();
             }
         });
 
-        element(by.css('#accessibility')).isSelected().then(function(checkbox){
-            if(checkbox===true){
-                ClickdocSearchpage.checkboxBarrierefreiheit.click();
+        await element(by.css('#onlineBooking')).isSelected().then(async (checkbox) => {
+            if (checkbox === true) {
+                await ClickdocSearchpage.checkboxOnlineTerminAktivieren();
+            }
+        });
+
+        await element(by.css('#accessibility')).isSelected().then(async (checkbox) => {
+            if (checkbox === true) {
+                await ClickdocSearchpage.checkboxBarrierefreiheitAktivieren();
             }
         });
 
     });
 
-    it('TestCase16: part3', function(){
+    it('TestCase16: part3', async () => {
 
-        browser.logger.info("TestCase16: part3");
-        helpers.waitForElement(ClickdocSearchpage.btnSuchen, 5000);
-        ClickdocSearchpage.btnSuchen.click();
-        helpers.waitForElement($('app-contact-card.ng-star-inserted'), 5000);
-        browser.sleep(3000);
-        $$('app-contact-card.ng-star-inserted').then(function(anzahl: any){
-            let gesamtAerzte = anzahl.length.toString();
-            expect(anzahl.length.toString()).toEqual(gesamtAerzte);
-            element.all(by.xpath("//app-profile-field//span[contains(text(),' Videosprechstunde')]")).then(function(videoService:any){
-               let anzahlAnbieter = videoService.length.toString();
-               if(gesamtAerzte===anzahlAnbieter){
-                   console.log("Number of search properties is consistent with the total search result.");
-                   console.log("gesamt Aerzte: "+gesamtAerzte);
-                   console.log("anzahl Anbieter: "+anzahlAnbieter);
-               }else{
-                expect(anzahlAnbieter).toBe(false);
-               }
+        await browser.logger.info("TestCase16: part3");
+        await helpers.waitForElement(ClickdocSearchpage.btnSuchen, 5000);
+        await ClickdocSearchpage.btnSuchenKlicken();
+        await helpers.waitForElement($('app-contact-card.ng-star-inserted'), 5000);
+        await browser.sleep(3000);
+        await $$('app-contact-card.ng-star-inserted').then(async (anzahl: any) => {
+            let gesamtAerzte = await anzahl.length.toString();
+            await expect(anzahl.length.toString()).toEqual(gesamtAerzte);
+            await element.all(by.xpath("//app-profile-field//span[contains(text(),' Videosprechstunde')]")).then(async (videoService: any) => {
+                let anzahlAnbieter = await videoService.length.toString();
+                try{
+                if (gesamtAerzte === anzahlAnbieter) {
+                    await console.log("Number of search properties is consistent with the total search result.");
+                    await console.log("gesamt Aerzte: " + gesamtAerzte);
+                    await console.log("anzahl Anbieter: " + anzahlAnbieter);
+                } 
+             }
+             catch (err) {
+                    expect(anzahlAnbieter).toBe(false);
+                }
             });
         });
-
-        //TODO:
-        //Beim automtisierten Ablauf wird im Umkreis 200km keinen einzigen Arzt in der Suche angezeigt, manuell werden aber die Ärzte angezeigt. 
-        //Sehr merkwürdig. muss noch rechechiert werden!!!
     });
-    
-  
-});    
+
+
+});

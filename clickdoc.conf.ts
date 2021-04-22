@@ -3,13 +3,14 @@ import { BASE_URL, CLICKDOC_PASSWORD, CLICKDOC_USERNAME } from "./environment/en
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 var log4js = require('log4js');
 var fs = require('fs-extra');
+require('babel-core/register');
 
 // An example configuration file
 export let config: Config = {
     // The address of a running selenium server.
     //seleniumAddress: 'http://localhost:4444/wd/hub',
     directConnect:true,
-  
+    
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
       browserName: 'chrome',
@@ -17,9 +18,9 @@ export let config: Config = {
     },
     
     framework: 'jasmine',
-    allScriptsTimeout: 60000,
-    getPageTimeout: 60000,
-    ScriptTimeoutError: 60000,
+    allScriptsTimeout: 10000,
+    getPageTimeout: 10000,
+    ScriptTimeoutError: 10000,
     jasmineNodeOpts: {
         onComplete: null,
         showColors: true,
@@ -36,7 +37,12 @@ export let config: Config = {
       './specs/clickdoc_search-part1_spec.js',
       './specs/clickdoc_search-part2_spec.js',
       './specs/clickdoc_search-part3_spec.js',
+      /*'./specs/clickdoc_login-part0_spec.js',*/
     ],
+    
+    //Um Asyc/Wait zu nutzen!
+    SELENIUM_PROMISE_MANAGER: false,
+
     beforeLaunch:function(){
       if (fs.existsSync('./logs/ExecutionLog.log')) {
           fs.unlink('./logs/ExecutionLog.log')
@@ -55,7 +61,7 @@ export let config: Config = {
      });
  },
 
-    onPrepare: function(){
+    onPrepare: async()=> {
       console.log('The Base URL is: ' + BASE_URL);
       console.log('The Username is: ' + CLICKDOC_USERNAME);
       console.log('The Password is: ' + CLICKDOC_PASSWORD);
@@ -65,7 +71,17 @@ export let config: Config = {
       console.log('Browser OS is: ' + browserCapabilities.get('platform'));
     });
 
+    browser.waitForAngularEnabled(false);
+    await browser.manage().window().maximize();
+    await browser.get(BASE_URL);
+
+    //Beim Fehler Test abbrechen!
+    var failFast = require('jasmine-fail-fast');
+    //jasmine.getEnv().addReporter(failFast.init());
+
       browser.logger = log4js.getLogger('protractorLog4js');
+     
+      
       
       jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
         savePath: './reports/html/',
@@ -76,5 +92,6 @@ export let config: Config = {
       }));
       
     }
+  
   
   };
