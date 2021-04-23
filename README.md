@@ -7,7 +7,7 @@ The following technologies were used in this project:
 - Jasmine -> for the logging and organisation of the tests
 - as a development environment VSC 
 # To Get Started
-- Go ro directory: cd ./clickdoc
+- Go to directory: cd ./clickdoc
 - npm install
 - npm run webdriver-update
 - npm run clickdoc
