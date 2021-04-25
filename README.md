@@ -1,7 +1,7 @@
 # clickdoc
 This is about a small project, where I started with its own interest.
 Test object: Clickdoc demo website
-The following technologies were used in this project:
+*The following technologies were used in this project:*
 - Typescript -> for the implmenting of the code
 - Protractor -> for the end-to-end test automation
 - Jasmine -> for the logging and organisation of the tests
