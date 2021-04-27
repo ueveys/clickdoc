@@ -3,10 +3,10 @@ import { BAHN_URL } from "../../environment/environment";
 import { BahnHomepage } from "../../pageObjects/bahn/bahn_homepage";
 var helpers = require('protractor-helpers');
 
-describe('Clickdoc_Login-Part1:', async () => {
+describe('Bahn Reiseauskunft', async () => {
     
     beforeAll(async () => {
-        await browser.logger.info("Clickdoc_Login-Part1 startet:");
+        await browser.logger.info("Bahn Webseite aufgerufen:");
         await browser.get(BAHN_URL);
         //await helpers.waitForElement(ClickdocHomepage.btnCookiesAkzep, 10000);
     });
@@ -19,7 +19,7 @@ describe('Clickdoc_Login-Part1:', async () => {
        
     });
 
-    it('TestCase1: Check all fields in popup login window: ', async () => {
+    it('TestCase1: Formular ausfüllen: ', async () => {
      
         await BahnHomepage.inputFromSendkeys("Frankfurt");
         await browser.sleep(1000);
