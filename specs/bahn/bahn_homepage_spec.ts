@@ -8,7 +8,6 @@ describe('Bahn Reiseauskunft', async () => {
     beforeAll(async () => {
         await browser.logger.info("Bahn Webseite aufgerufen:");
         await browser.get(BAHN_URL);
-        //await helpers.waitForElement(ClickdocHomepage.btnCookiesAkzep, 10000);
     });
 
     beforeEach(async () => {
@@ -27,9 +26,7 @@ describe('Bahn Reiseauskunft', async () => {
         await browser.sleep(1000);
         await BahnHomepage.inputDaySendkeys("12.12.2021");
         await browser.sleep(5000);
-        await BahnHomepage.inputTimeSendkeys("13:00");
-        //await helpers.clearAndSetValue(BahnHomepage.inputTime, "12:00");
-        //await BahnHomepage.inputTimeSendkeys("12:00");
+        await BahnHomepage.inputTimeSendkeys("13:00");     
         await browser.sleep(5000);
 
     });   
