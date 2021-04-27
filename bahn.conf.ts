@@ -39,12 +39,12 @@ export let config: Config = {
     SELENIUM_PROMISE_MANAGER: false,
 
     beforeLaunch:function(){
-      if (fs.existsSync('./logs/ExecutionLog.log')) {
-          fs.unlink('./logs/ExecutionLog.log')
+      if (fs.existsSync('./logs/bahn/ExecutionLog.log')) {
+          fs.unlink('./logs/bahn/ExecutionLog.log')
       }
      log4js.configure({
          appenders: {
-             fileLog: { type: 'file', filename: './logs/ExecutionLog.log' },
+             fileLog: { type: 'file', filename: './logs/bahn/ExecutionLog.log' },
              console: { type: 'log4js-protractor-appender' }
          },
              categories: {
@@ -77,9 +77,9 @@ export let config: Config = {
       
       
       jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
-        savePath: './reports/html/',
+        savePath: './reports/html/bahn/',
         screenshotsFolder: 'images',
-        fileNamePrefix: 'DemoClickdoc',
+        fileNamePrefix: 'Bahn',
         takeScreenshots: true,
         cleanDestination: true,
       }));
