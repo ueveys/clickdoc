@@ -1,5 +1,5 @@
 import {browser, Config} from "protractor";
-import { BASE_URL, CLICKDOC_PASSWORD, CLICKDOC_USERNAME } from "./environment/environment";
+import { CLICKDOC_URL, CLICKDOC_PASSWORD, CLICKDOC_USERNAME } from "./environment/environment";
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 var log4js = require('log4js');
 var fs = require('fs-extra');
@@ -32,12 +32,11 @@ export let config: Config = {
     // to protractor (in this example conf.js).
     // They may include glob patterns.
     specs: [
-      './specs/clickdoc_login-part1_spec.js',
-      './specs/clickdoc_login-part2_spec.js',
-      './specs/clickdoc_search-part1_spec.js',
-      './specs/clickdoc_search-part2_spec.js',
-      './specs/clickdoc_search-part3_spec.js',
-      /*'./specs/clickdoc_login-part0_spec.js',*/
+      './specs/clickdoc/clickdoc_login-part1_spec.js',
+      './specs/clickdoc/clickdoc_login-part2_spec.js',
+      './specs/clickdoc/clickdoc_search-part1_spec.js',
+      './specs/clickdoc/clickdoc_search-part2_spec.js',
+      './specs/clickdoc/clickdoc_search-part3_spec.js',
     ],
     
     //Um Asyc/Wait zu nutzen!
@@ -62,7 +61,7 @@ export let config: Config = {
  },
 
     onPrepare: async()=> {
-      console.log('The Base URL is: ' + BASE_URL);
+      console.log('The Base URL is: ' + CLICKDOC_URL);
       console.log('The Username is: ' + CLICKDOC_USERNAME);
       console.log('The Password is: ' + CLICKDOC_PASSWORD);
       browser.getCapabilities().then((browserCapabilities: any) => {
@@ -73,7 +72,7 @@ export let config: Config = {
 
     await browser.waitForAngularEnabled(false);
     await browser.manage().window().maximize();
-    await browser.get(BASE_URL);
+    
 
     //Beim Fehler Test abbrechen!
     var failFast = require('jasmine-fail-fast');
