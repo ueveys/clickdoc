@@ -40,30 +40,6 @@ export class ClickdocSearchpage {
   static nameDoctor = element(by.xpath("//div[@class='contact-header-container']//h2"));
   static nameAA = element(by.xpath("//h2[contains(text(),'A Aa')]"));
 
-  static async dropdownItemDisapp(name: string) {
-    //this.inputName.sendKeys(name);
-    await helpers.clearAndSetValue(this.inputName, name);
-    await browser.sleep(3000);
-    expect(this.inputNameDropdownItem.getText()).not.toContain(name);
-
-  }
-
-  static async checkboxDeaktivieren(checkboxID: any) {
-    await element(by.xpath(`${checkboxID}`)).isSelected().then(async function (checkbox) {
-      if (checkbox === true) {
-        await element(by.xpath(`${checkboxID}`)).click();
-      }
-    });
-  }
-
-  static async checkboxAktivieren(checkboxID: any) {
-    await element(by.xpath(`${checkboxID}`)).isSelected().then(async function (checkbox) {
-      if (checkbox === false) {
-        await element(by.xpath(`${checkboxID}`)).click();
-      }
-    });
-  }
-
   static async btnSuchenKlicken() {
     await this.btnSuchen.click();
   }

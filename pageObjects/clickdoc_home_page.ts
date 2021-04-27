@@ -5,31 +5,31 @@ import { BASE_URL } from '../environment/environment';
 export class ClickdocHomepage {
   
   static btnCookiesAkzep = element(by.css('button.btn:nth-child(2)'));
-  static profil = element(by.xpath("//ul[contains(@class, 'menu-desktop')]//li[position()=5]"));
+  static iconProfil = element(by.xpath("//ul[contains(@class,'menu-desktop')]//a[@angularticsaction='Open login iframe']"));
   static favoriten = element(by.css('.menu-item:nth-child(5) .bolder-menu'));
-  static userIcon = element(by.css(".menu-item:nth-child(6) .avatar-image"));
+  static iconUser = element(by.css(".menu-item:nth-child(6) .avatar-image"));
   static myprofil = element(by.css(".dropdown-item:nth-child(1) .menu-text"));
-  static logout = element(by.css(".dropdown-item:nth-child(2) .menu-text"));
-  static suchseite = element(by.css(".menu-item:nth-child(3) .bolder-menu"));
+  static iconLogout = element(by.css(".dropdown-item:nth-child(2) .menu-text"));
+  static iconSuchseite = element(by.css(".menu-item:nth-child(3) .bolder-menu"));
 
   static async akzeptBtnKlicken(){
     await this.btnCookiesAkzep.click();
   }
 
   static async iconProfilKlicken(){
-    await this.profil.click();
+    await this.iconProfil.click();
   }
 
-  static async suchseiteKlicken(){
-    await this.suchseite.click();
+  static async iconSuchseiteKlicken(){
+    await this.iconSuchseite.click();
   }
 
   static async iconUserKlicken(){
-    await this.userIcon.click();
+    await this.iconUser.click();
   }
 
   static async iconLogoutKlicken(){
-    await this.logout.click();
+    await this.iconLogout.click();
   }
  
 }

@@ -2,7 +2,7 @@ import { element, by } from 'protractor';
 
 export class LoginPopup {
 
-   static closeIcon = element(by.xpath("//span[@class='iframe-dialog-close icon icon-CO_close']"));
+   static iconClose = element(by.xpath("//span[@class='iframe-dialog-close icon icon-CO_close']"));
   //closeIcon = element(by.css('.iframe-dialog-close'));
    static inputMail = element(by.xpath("//input[@id='mat-input-1']"));
    static inputPassword = element(by.xpath("//input[@id='mat-input-2']"));
@@ -16,28 +16,28 @@ export class LoginPopup {
    static hinweisFehlendePassword = element(by.css("#mat-error-1"));
   
   
-  static async mailAdresseAngeben(mailadresse: string){
+  static async inputMailAngeben(mailadresse: string){
       await this.inputMail.sendKeys(mailadresse);
   }
 
-  static async passwordEingeben(password: string){
+  static async inputPasswordEingeben(password: string){
     await this.inputPassword.sendKeys(password);
   }
 
-  static async anmeldenKlicken(){
+  static async btnLoginKlicken(){
       await this.btnLogin.click();
   }
   
-  static async neuIDRegistrieren(){
+  static async btnRegisterKlicken(){
      await this.btnRegister.click();
   }
 
-  static async passwordVergessenKlicken(){
+  static async btnPasswordForgotKlicken(){
      await this.btnPasswordForgot.click();
   }
 
-  static async loginPopupFensterschliessen(){
-   await this.closeIcon.click();
+  static async iconCloseKlicken(){
+   await this.iconClose.click();
   }
  
 }

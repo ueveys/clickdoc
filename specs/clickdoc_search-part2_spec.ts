@@ -12,7 +12,7 @@ describe('Clickdoc_SearchPage-Part1:', () => {
 
     it('Go to the search page:', async () => {
         await browser.sleep(3000);
-        await ClickdocHomepage.suchseiteKlicken();
+        await ClickdocHomepage.iconSuchseiteKlicken();
         await helpers.waitForElement(ClickdocSearchpage.inputName, 5000);
         await ClickdocSearchpage.inputName.clear();
     });

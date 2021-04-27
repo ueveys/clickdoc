@@ -10,7 +10,9 @@
   },
   "scripts": {
     "test": "protractor ./JSFiles/protractor.conf.js",
+    "preclickdoc": "tsc",
     "clickdoc": "protractor ./JSFiles/clickdoc.conf.js",
+    "postclickdoc": "rmdir /s /q JSFiles",
     "cucumbertest": "protractor ./JSFiles/cucumber.conf.js",
     "pretest": "tsc",
     "protractor": "./node_modules/protractor/built/cli.js",

@@ -71,13 +71,13 @@ export let config: Config = {
       console.log('Browser OS is: ' + browserCapabilities.get('platform'));
     });
 
-    browser.waitForAngularEnabled(false);
+    await browser.waitForAngularEnabled(false);
     await browser.manage().window().maximize();
     await browser.get(BASE_URL);
 
     //Beim Fehler Test abbrechen!
     var failFast = require('jasmine-fail-fast');
-    //jasmine.getEnv().addReporter(failFast.init());
+    jasmine.getEnv().addReporter(failFast.init());
 
       browser.logger = log4js.getLogger('protractorLog4js');
      

@@ -6,11 +6,12 @@ var helpers = require('protractor-helpers');
 
 describe('Clickdoc_SearchPage-Part1:', () => {
 
-    beforeAll(async () => {
-        await ClickdocHomepage.suchseiteKlicken();
+    it('Go to SearchPage',async () => {
+        await browser.logger.info("Clickdoc_SearchPage-Part1 startet");
+        await ClickdocHomepage.iconSuchseiteKlicken();
     });
 
-    browser.logger.info("Clickdoc_SearchPage-Part1 startet");
+    
 
 
     it('In der Suchseite', async () => {

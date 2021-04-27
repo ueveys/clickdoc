@@ -6,6 +6,8 @@
 /out-tsc
 /reports
 /archiv
+/JSFiles
+/logs
 # Only exists if Bazel was run
 /bazel-out
 
