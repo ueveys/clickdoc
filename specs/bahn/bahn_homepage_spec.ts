@@ -26,8 +26,9 @@ describe('Clickdoc_Login-Part1:', async () => {
         await BahnHomepage.inputToSendkeys("Bingöl");
         await browser.sleep(1000);
         await BahnHomepage.inputDaySendkeys("12.12.2021");
-        await browser.sleep(2000);
-        await helpers.clearAndSetValue(BahnHomepage.inputTime, "12:00");
+        await browser.sleep(5000);
+        await BahnHomepage.inputTimeSendkeys("13:00");
+        //await helpers.clearAndSetValue(BahnHomepage.inputTime, "12:00");
         //await BahnHomepage.inputTimeSendkeys("12:00");
         await browser.sleep(5000);
 

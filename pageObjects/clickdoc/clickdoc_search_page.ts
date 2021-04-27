@@ -15,7 +15,7 @@ export class ClickdocSearchpage {
   static areaResultContainerLoadMoreLink = element(by.xpath("//a[@class='load-more-link']"));
   static inputName = element(by.css('#search-query-typeahead'));
   static inputLokation = element(by.css("#search-location-typeahead"));
-  static inputLokationFirsSuggestion = $('button.dropdown-item:nth-child(2)');
+  static inputLokationFirsSuggestion = element(by.css('button.dropdown-item:nth-child(2)'));
   static checkboxOnlineTermin = element(by.xpath("//span[@id='onlineAppointmentsIcon']/following::span[1]"));
   static checkboxOnlineTerminDay = element(by.css(".day > button"));
   static checkboxOnlineTerminTime = element(by.css(".time > button"));
