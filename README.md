@@ -1,4 +1,4 @@
-# clickdoc und more
+# clickdoc and more
 This is about a small project, where I started with its own interest.
 
 Test object: Clickdoc demo website and bahn.de
